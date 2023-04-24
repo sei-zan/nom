@@ -56,7 +56,7 @@
 ///
 /// // Let's make a helper function that returns true when not a space
 /// // we are required to do this because the `take_while!` macro is limited
-/// // to idents, so we can't negate `ìs_space` at the call site
+/// // to idents, so we can't negate `is_space` at the call site
 /// fn is_not_space(c: u8) -> bool { ! nom::character::is_space(c) }
 ///
 /// // Our parser will return the `Dragon` variant when matching "dragon",
@@ -514,7 +514,7 @@ macro_rules! permutation_init (
   );
 
   (($($parsed:expr),*), $e:ident?, $($rest:tt)*) => (
-    permutation_init!(($($parsed),* , $crate::lib::std::option::Option::None), $($rest)*);
+    permutation_init!(($($parsed),* , $crate::lib::std::option::Option::None), $($rest)*)
   );
   (($($parsed:expr),*), $e:ident, $($rest:tt)*) => (
     permutation_init!(($($parsed),* , $crate::lib::std::option::Option::None), $($rest)*);

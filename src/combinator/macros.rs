@@ -503,7 +503,7 @@ macro_rules! map(
     $crate::combinator::mapc($i, move |i| {$submac!(i, $($args)*)}, $g)
   );
   ($i:expr, $submac:ident!( $($args:tt)* ), $g:expr) => (
-    map!(__impl $i, $submac!($($args)*), $g);
+    map!(__impl $i, $submac!($($args)*), $g)
   );
   ($i:expr, $f:expr, $g:expr) => (
     map!(__impl $i, call!($f), $g);
